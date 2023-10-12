@@ -55,17 +55,15 @@ public class BankAccount {
         this.bankBalance = setBankBalance;
     }
 
-    public int deposit(int amount) {
-        return this.bankBalance + amount;
+    public void deposit(int amount) {
+        this.bankBalance += amount;
     }
 
-    public int withdraw(int amount) {
-        return this.bankBalance - amount;
+    public void withdraw(int amount) {
+        this.bankBalance -= amount;
     }
 
-    public int payInterest() {
-        return (int) (
-                this.bankBalance + (this.bankBalance * 0.05)
-        );
+    public void payInterest() {
+        this.bankBalance += (int) (this.bankBalance * 0.05);
     }
 }

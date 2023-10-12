@@ -148,7 +148,7 @@ public class BankAccountTest {
                 LocalDate.of(2003, 10, 8),
                 11111111
         );
-        b1.setBankBalance(b1.deposit(50));
+        b1.deposit(50);
         int updatedBalance = b1.getBankBalance();
         assertThat(updatedBalance).isEqualTo(50);
 
@@ -162,8 +162,8 @@ public class BankAccountTest {
                 LocalDate.of(2003, 10, 8),
                 11111111
         );
-        b1.setBankBalance(b1.deposit(100));
-        b1.setBankBalance(b1.withdraw(20));
+        b1.deposit(100);
+        b1.withdraw(20);
         int updatedBalance = b1.getBankBalance();
 
         assertThat(updatedBalance).isEqualTo(80);
@@ -177,10 +177,11 @@ public class BankAccountTest {
                 LocalDate.of(2003, 10, 8),
                 11111111
         );
-        b1.setBankBalance(b1.deposit(100));
-        b1.setBankBalance(b1.payInterest());
+        b1.deposit(100);
+        b1.payInterest();
         int updatedBalance = b1.getBankBalance();
 
         assertThat(updatedBalance).isEqualTo(105);
     }
+
 }
